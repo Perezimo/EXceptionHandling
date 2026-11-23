@@ -1,0 +1,51 @@
+
+import java.io.IOException;
+
+class ExceptionA extends Exception {
+    public ExceptionA(String message) {
+        super(message);
+    }
+}
+
+class ExceptionB extends ExceptionA {
+    public ExceptionB(String message) {
+        super(message);
+    }
+}
+
+public class ExceptionDemo {
+
+    public static void main(String[] args) {
+
+
+        try {
+            throw new ExceptionA("ExceptionA occurred");
+        }
+        catch (Exception exception) {
+            System.out.println(exception.getMessage());
+        }
+
+        try {
+            throw new ExceptionB("ExceptionB occurred");
+        }
+        catch (Exception exception) {
+            System.out.println(exception.getMessage());
+        }
+
+        try {
+            String name = null;
+            System.out.println(name.length());
+        }
+        catch (Exception exception) {
+            System.out.println(exception);
+        }
+
+        try {
+            throw new IOException("IOException occurred");
+        }
+        catch (Exception exception) {
+            System.out.println(exception.getMessage());
+        }
+    }
+}
+

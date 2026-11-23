@@ -1,0 +1,3 @@
+A well constructed exception handling, saves program from terminating abruptly by handling the
+error created that occurs during object creation. This prevent program from crashing and allows recovery.
+

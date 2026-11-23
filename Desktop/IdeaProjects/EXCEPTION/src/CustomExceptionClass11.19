@@ -1,0 +1,56 @@
+public class ValidationException extends Exception{
+    public class ValidationException(String message);
+         super(message):
+    }
+
+public class Phone {
+
+    private String name;
+    private String serialNumber;
+
+    public Phone(String name, String serialNumber)
+            throws ValidationException {
+
+        if (name == null || name.trim().isEmpty()) {
+            throw new ValidationException("Phone name cannot be empty.");
+        }
+
+        if (serialNumber == null || serialNumber.trim().isEmpty()) {
+            throw new ValidationException("Serial number cannot be empty.");
+        }
+
+        if (!serialNumber.matches("\\d{16}")) {
+            throw new ValidationException(
+                    "Serial number must contain exactly 16 digits."
+            );
+        }
+
+        this.name = name;
+        this.serialNumber = serialNumber;
+    }
+
+    public void displayPhone() {
+        System.out.println("Phone Name: " + name);
+        System.out.println("Serial Number: " + serialNumber);
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        try {
+            Phone phone = new Phone(
+                    "Samsung Galaxy",
+                    "1234567890123456"
+            );
+
+            phone.displayPhone();
+
+        } catch (ValidationException e) {
+            System.out.println("Validation Error: " + e.getMessage());
+        }
+
+    }
+}
+}

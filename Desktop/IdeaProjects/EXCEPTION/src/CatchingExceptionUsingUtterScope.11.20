@@ -1,0 +1,27 @@
+
+public class ExceptionHandling{
+
+    public static void someMethod() {
+
+        try {
+            int[] numbers = {2,4,6,8,10};
+
+            System.out.println(numbers[7]);
+
+        }
+        catch (ArithmeticException e) {
+            System.out.println("Arithmetic Exception someMethod");
+        }
+    }
+
+    public static void main(String[] args) {
+
+        try {
+            someMethod();
+        }
+        catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Array Index Out Of Bounds Exception");
+        }
+
+    }
+}

@@ -1,0 +1,22 @@
+Exceptions are errors or problems a program encounters during execution. This either terminates
+the execution of the program abruptly or give an unexpected output.
+
+SOME EXCEPTIONS:
+1. ArrayIndexOutOfBoundsException: Trying to access an array position that does not exist.
+
+2. Division by Zero: This is an ArithmeticException that displays an  error message when an attempt to
+to make a Zero division in an arithmetic expression.
+
+3. NullPointerException: When a program tries to access a method with null object.
+
+4. InvalidInput: When a user entered a wrong input in a field. E.g. Entering a number
+ instead of a string in a field. This raise an InputMismatchException.
+
+5. FileNotFoundException: Attempting to access a file that does not exist.
+
+6. ClassCastException: An attempt to cast an object into an incompatible data type
+
+7.OutOfMemoryException: When the program runs out of available memory during execution.
+
+
+
